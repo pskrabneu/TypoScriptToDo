@@ -1,9 +1,12 @@
 /**
  * Created by pskrebnev on 19.09.2016.
  */
-var container = document.getElementById('container');
-for (var x = 0; x <= 5; x++) {
-    var counter = x;
+var array = [
+    "Pick up drycleaning",
+    "Clean Batcave",
+    "Save Gotham"
+];
+for (var index in array) {
+    var value = array[index];
+    console.log(index + ": " + value);
 }
-// console.log(counter);
-//# sourceMappingURL=app.js.map
