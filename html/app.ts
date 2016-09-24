@@ -9,10 +9,13 @@ var array = [
 ];
 
 for (var index in array) {
-    var value = array[index];
-    console.log(`${index}: ${value}`);
+    var strValue = array[index];
+    console.log(`${index}: ${strValue}`);
 }
 
+for (var value of array) {
+    console.log(`== ${value} ==`);
+}
 
 
 
