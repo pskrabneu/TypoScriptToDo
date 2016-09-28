@@ -19,7 +19,7 @@ for (var value of array) {
 }*/
 
 //Video 06-Lambdas
-var container = document.getElementById('container');
+/*var container = document.getElementById('container');
 
 function Counter(el) {
     this.count = 0;
@@ -33,7 +33,18 @@ function Counter(el) {
     })
 }
 
-new Counter(container);
+new Counter(container);*/
+
+// This code works:
+var filtered = [-1, 0, 1, 2, 3, -5, 8].filter(x => x > 0);
+
+for (var value of filtered) console.log(`${value}`);
+
+// But this doesn't:
+var filtered1: number [] = [-1, 0, 1, 2, 3, -5, 8].filter(x => x > 0);
+
+for (var value of filtered1) console.log(`${value}`);
+
 
 
 
