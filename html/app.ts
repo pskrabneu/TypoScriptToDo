@@ -25,5 +25,16 @@ function calculate(action, ...values) {
 
 console.log(calculate('add', 1, 2, 3, 4, 5));
 
+// Spreading array
+var sourse = [5, 6, 7];
+var target = [1, 2, 3, 4, ...sourse, 8, 9];
 
+console.log(target);
+
+// Spreading array
+var list1 = [1,3,4,5];
+var list2 = [6,7,8];
+
+list1.push(...list2);
+console.log(list1);
 
