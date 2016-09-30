@@ -2,52 +2,25 @@
  * Created by pskrebnev on 19.09.2016.
  */
 
+// Chapter 02 > 02-07
+// Destructing
 
-/*var array = [
-    "Pick up drycleaning",
-    "Clean Batcave",
-    "Save Gotham"
-];
-
-for (var index in array) {
-    var strValue = array[index];
-    console.log(`${index}: ${strValue}`);
-}
-
-for (var value of array) {
-    console.log(`== ${value} ==`);
-}*/
-
-//Video 06-Lambdas
-/*var container = document.getElementById('container');
-
-function Counter(el) {
-    this.count = 0;
-
-    el.innerHTML = this.count;
-
-    el.addEventListener('click',
-    () => {
-        this.count += 1;
-        el.innerHTML = this.count;
-    })
-}
-
-new Counter(container);*/
-
-// This code works:
-var filtered = [-1, 0, 1, 2, 3, -5, 8].filter(x => x > 0);
-
-for (var value of filtered) console.log(`${value}`);
-
-// But this doesn't:
-var filtered1: number [] = [-1, 0, 1, 2, 3, -5, 8].filter(x => x > 0);
-
-for (var value of filtered1) console.log(`${value}`);
+// Doesn't work
+var array = [123, "Pick up my code", false];
+var [id, title, completed] = array;
+console.log(`${id}, ${title}, ${completed}`);
 
 
 
+// Works with NodeJS 6.5 and higher!
+/*var a = 1;
+var b = 3;
+console.log(`Before a = ${a}, b = ${b}`);
 
+[a, b] = [b, a];
+console.log(`After a = ${a}, b = ${b}`);*/
 
-
-
+// Doesn't have a much sense: i.e. "asdd".toString()
+/*var y = 5;
+console.log(y);
+console.log(`${y}`);*/
