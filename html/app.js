@@ -3,19 +3,19 @@
  */
 // Chapter 02 > 02-07
 // Destructing
-// Doesn't work
-var array = [123, "Pick up my code", false];
-var id = array[0], title = array[1], completed = array[2];
-console.log(id + ", " + title + ", " + completed);
-// Works with NodeJS 6.5 and higher!
-/*var a = 1;
-var b = 3;
-console.log(`Before a = ${a}, b = ${b}`);
-
-[a, b] = [b, a];
-console.log(`After a = ${a}, b = ${b}`);*/
-// Doesn't have a much sense: i.e. "asdd".toString()
-/*var y = 5;
-console.log(y);
-console.log(`${y}`);*/
+var todo = {
+    id: 123,
+    title: "Pick up my code",
+    completed: false
+};
+var completed = todo.completed, id = todo.id, title = todo.title;
+console.log(todo.id, todo.title, todo.completed);
+// One more example of destructuring
+function countdown(_a) {
+    var initial = _a.initial, _b = _a.final, final = _b === void 0 ? 0 : _b, _c = _a.interval, interval = _c === void 0 ? 1 : _c, current = _a.initial;
+    while (current > final) {
+        console.log(current);
+        current -= interval;
+    }
+}
 //# sourceMappingURL=app.js.map
