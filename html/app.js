@@ -1,21 +1,26 @@
 /**
  * Created by pskrebnev on 19.09.2016.
  */
-// Chapter 02 > 02-07
-// Destructing
-var todo = {
-    id: 123,
-    title: "Pick up my code",
-    completed: false
-};
-var completed = todo.completed, id = todo.id, title = todo.title;
-console.log(todo.id, todo.title, todo.completed);
-// One more example of destructuring
-function countdown(_a) {
-    var initial = _a.initial, _b = _a.final, final = _b === void 0 ? 0 : _b, _c = _a.interval, interval = _c === void 0 ? 1 : _c, current = _a.initial;
-    while (current > final) {
-        console.log(current);
-        current -= interval;
+// Chapter 02 > 02-08
+// The spread operator
+function calculate(action) {
+    var values = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        values[_i - 1] = arguments[_i];
     }
+    var total = 0;
+    for (var _a = 0, values_1 = values; _a < values_1.length; _a++) {
+        var value = values_1[_a];
+        switch (action) {
+            case 'add':
+                total += value;
+                break;
+            case 'substract':
+                total -= value;
+                break;
+        }
+    }
+    return total;
 }
+console.log(calculate('add', 1, 2, 3, 4, 5));
 //# sourceMappingURL=app.js.map

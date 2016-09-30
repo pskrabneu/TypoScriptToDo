@@ -2,30 +2,28 @@
  * Created by pskrebnev on 19.09.2016.
  */
 
-// Chapter 02 > 02-07
-// Destructing
+// Chapter 02 > 02-08
+// The spread operator
+function calculate(action, ...values) {
+    var total = 0;
 
-var todo = {
-    id: 123,
-    title: "Pick up my code",
-    completed: false
-}
+    for (var value of values) {
 
-var {completed, id, title} = todo;
+        switch (action) {
+            case 'add':
+                total += value;
+                break;
 
-console.log(todo.id, todo.title, todo.completed);
-
-// One more example of destructuring
-
-function countdown({
-    initial,
-    final: final = 0,
-    interval: interval = 1,
-    initial: current
-}) {
-    while (current > final) {
-        console.log(current);
-        current -= interval;
+            case 'substract':
+                total -= value;
+                break;
+        }
     }
+
+    return total;
 }
+
+console.log(calculate('add', 1, 2, 3, 4, 5));
+
+
 
