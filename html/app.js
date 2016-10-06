@@ -50,15 +50,24 @@
  console.log(support);*/
 // Chapter 3 > 03-01
 // JavaScript types
-var animal = {
+/*var animal = {
     name: "Fido",
     species: "Dog",
     age: 5,
     speak: function () {
         console.log('Woof! Woof!');
     }
-};
+}
+
 function makeAnimalSpeak(animal) {
     animal.speak();
+}
+
+makeAnimalSpeak(animal);*/
+// Chapter 3 > 03-03
+// Specifying JavaScript types
+function totalLength(x, y) {
+    var total = x.length + y.length;
+    return total;
 }
 //# sourceMappingURL=app.js.map
