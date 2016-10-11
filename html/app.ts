@@ -74,7 +74,15 @@ makeAnimalSpeak(animal);*/
 // Chapter 3 > 03-03
 // Specifying JavaScript types
 
-function totalLength(x: any[], y: string): number {
-    var total: number = x.length + y.length;
-    return total;
-}
+/*function totalLength(x: (any[] | string), y: (string | any[])): number {
+    return x.length + y.length;
+}*/
+
+// Chapter 3 > 03-05
+// Overloading function. Didn't understand. Need to be detailed.
+function totalLenght (x: string, y: string): number
+function totalLenght (x: any[], y: any[]): number
+
+totalLenght("amber", "lemura");
+
+
