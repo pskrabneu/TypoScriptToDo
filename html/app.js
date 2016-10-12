@@ -1,5 +1,7 @@
 /**
  * Created by pskrebnev on 19.09.2016.
  */
-totalLenght("amber", "lemura");
+var todo = {
+    name: 'Pick up my boots'
+};
 //# sourceMappingURL=app.js.map
