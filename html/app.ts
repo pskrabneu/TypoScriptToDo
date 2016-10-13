@@ -3,29 +3,42 @@
  */
 
 // Chapter 4 "Custom types" >
-// Video01 "Defining custom types with interfaces"
+// Video03 "Extending interface"
 
 interface Todo {
     name: string;
     completed?: boolean; // '?' makes the property optional
 }
 
-interface ITodoService {
-    add(todo: Todo): Todo;
-    delete(todoId: number): void;
-    getAll(): Todo[];
-    getBuId(todoId: number): Todo;
+interface jQuery {
+    (selector: (string | any)): jQueryElement;
+    fn: any;
+    version: number;
 }
 
-var todo: Todo = {
-    name: 'Pick up my boots',
-};
+interface jQueryElement {
+    data(name: string): any;
+    data(name: string, data: any): jQueryElement;
+}
 
+interface jQueryElement {
+    todo(): Todo;
+    todo(todo: Todo): jQueryElement;
+}
 
+$.fn.todo = function (todo?: Todo) {
 
+    if(todo) {
+        $(this).data('todo', todo)
+    } else {
+        return $(this).data('todo');
+    }
 
+}
 
-
-
+var todo = { name: "Pick up my car"};
+var container = $('#container');
+container.data('todo', todo);
+var savedTodo = container.data('todo');
 
 
