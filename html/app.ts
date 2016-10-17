@@ -3,42 +3,23 @@
  */
 
 // Chapter 4 "Custom types" >
-// Video03 "Extending interface"
+// Video04 "Defining constant values with enums".
 
 interface Todo {
     name: string;
-    completed?: boolean; // '?' makes the property optional
+    completed?: boolean;
 }
 
-interface jQuery {
-    (selector: (string | any)): jQueryElement;
-    fn: any;
-    version: number;
+var todo: Todo = {
+    name: "Pick up my car",
+    completed: true
 }
 
-interface jQueryElement {
-    data(name: string): any;
-    data(name: string, data: any): jQueryElement;
-}
+// Arrow function
+var inc = (x)=>(x * 5 + 6);
+console.log(inc(8));
 
-interface jQueryElement {
-    todo(): Todo;
-    todo(todo: Todo): jQueryElement;
-}
 
-$.fn.todo = function (todo?: Todo) {
 
-    if(todo) {
-        $(this).data('todo', todo)
-    } else {
-        return $(this).data('todo');
-    }
-
-}
-
-var todo = { name: "Pick up my car"};
-var container = $('#container');
-container.data('todo', todo);
-var savedTodo = container.data('todo');
 
 
