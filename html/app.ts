@@ -3,29 +3,20 @@
  */
 
 // Chapter 6 "Generics" >
-// Video01 "Introducing generics".
+// Video02 "Creating generic classes".
 
-function clone<T>(value: T): T {
-    let serialized = JSON.stringify(value);
-    return JSON.parse(serialized);
+class KeyValuePair<TKey, TValue> {
+    constructor(
+        public key: TKey,
+        public value: TValue
+    )
 }
 
-var test1: any = {
-    id: 1,
-    name: "Pick up my car",
-    state: false
-};
+let pair1 = new KeyValuePair<number, string>(1, 'First');
+let pair2 = new KeyValuePair<string, string>('bla-bla', 'yellow');
+let pair3 = new KeyValuePair<string, Date>('Second', new Date(Date.now()));
 
-console.log(clone(125));
-console.log(clone("double"));
-console.log(clone(test1));
-
-
-
-
-
-
-
+console.log(pair1.key.valueOf());
 
 
 

@@ -2,17 +2,14 @@
  * Created by pskrebnev on 19.09.2016.
  */
 // Chapter 6 "Generics" >
-// Video01 "Introducing generics".
-function clone(value) {
-    var serialized = JSON.stringify(value);
-    return JSON.parse(serialized);
-}
-var test1 = {
-    id: 1,
-    name: "Pick up my car",
-    state: false
-};
-console.log(clone(125));
-console.log(clone("double"));
-console.log(clone(test1));
+// Video02 "Creating generic classes".
+var KeyValuePair = (function () {
+    function KeyValuePair() {
+    }
+    return KeyValuePair;
+}());
+var pair1 = new KeyValuePair(1, 'First');
+var pair2 = new KeyValuePair('bla-bla', 'yellow');
+var pair3 = new KeyValuePair('Second', new Date(Date.now()));
+console.log(pair1.key.valueOf());
 //# sourceMappingURL=app.js.map
