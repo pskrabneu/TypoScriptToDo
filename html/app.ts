@@ -18,7 +18,7 @@ var jQuery = {
     $.fn.myPlugin = function () {
         // my plugin code
     }
-}) (jQuery)
+})(jQuery);
 
 
 
