@@ -1,15 +1,18 @@
 /**
  * Created by pskrebnev on 19.09.2016.
  */
-// Chapter 6 "Generics" >
-// Video02 "Creating generic classes".
-var KeyValuePair = (function () {
-    function KeyValuePair() {
+// Chapter 7 "Understanding Modules" >
+// Video03 "Understanding the need of modules. Namespaces".
+var jQuery = {
+    version: 1.19,
+    fn: {}
+};
+(function defineType($) {
+    if ($.version < 1.15) {
+        throw 'Plugin requires jQuery version 1.15+';
     }
-    return KeyValuePair;
-}());
-var pair1 = new KeyValuePair(1, 'First');
-var pair2 = new KeyValuePair('bla-bla', 'yellow');
-var pair3 = new KeyValuePair('Second', new Date(Date.now()));
-console.log(pair1.key.valueOf());
+    $.fn.myPlugin = function () {
+        // my plugin code
+    };
+})(jQuery);
 //# sourceMappingURL=app.js.map

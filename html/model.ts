@@ -1,27 +1,23 @@
 /**
- * Created by pskrebnev on 17.10.2016.
+ * Created by pskrebnev on 20.10.2016.
  */
-interface ITodoService {
-    add(todo: Todo): Todo;
-    delete(todoId: number): void;
-    getAll(): Todo[];
-    getById(todoId: number): Todo;
+namespace TodoApp.Model {
+
+    export interface Todo {
+        id: number;
+        name: string;
+        state: TodoState;
+    }
+
 }
 
-interface Todo {
-    id: number;
-    name: string;
-    state: TodoState;
+namespace TodoApp.Model {
+
+    export enum TodoState {
+        New = 1,
+        Active,
+        Complete,
+        Deleted
+    }
 }
-
-enum TodoState {
-    New = 1,
-    Active,
-    Complete,
-    Deleted
-}
-
-
-
-
 

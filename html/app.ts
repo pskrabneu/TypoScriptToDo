@@ -2,21 +2,25 @@
  * Created by pskrebnev on 19.09.2016.
  */
 
-// Chapter 6 "Generics" >
-// Video02 "Creating generic classes".
+// Chapter 7 "Understanding Modules" >
+// Video03 "Understanding the need of modules. Namespaces".
 
-class KeyValuePair<TKey, TValue> {
-    constructor(
-        public key: TKey,
-        public value: TValue
-    )
-}
+var jQuery = {
+    version: 1.19,
+    fn: {}
+};
 
-let pair1 = new KeyValuePair<number, string>(1, 'First');
-let pair2 = new KeyValuePair<string, string>('bla-bla', 'yellow');
-let pair3 = new KeyValuePair<string, Date>('Second', new Date(Date.now()));
+(function defineType($) {
+    if ($.version < 1.15) {
+        throw 'Plugin requires jQuery version 1.15+'
+    }
 
-console.log(pair1.key.valueOf());
+    $.fn.myPlugin = function () {
+        // my plugin code
+    }
+}) (jQuery)
+
+
 
 
 
