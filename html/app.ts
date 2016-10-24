@@ -3,22 +3,12 @@
  */
 
 // Chapter 7 "Understanding Modules" >
-// Video03 "Understanding the need of modules. Namespaces".
+// Video03 "Understanding the need of modules. Importing modules".
+import { Todo as TodoTask, TodoState } from './model';
+import './jQuery'
 
-var jQuery = {
-    version: 1.19,
-    fn: {}
-};
+let todo: TodoTask;
 
-(function defineType($) {
-    if ($.version < 1.15) {
-        throw 'Plugin requires jQuery version 1.15+'
-    }
-
-    $.fn.myPlugin = function () {
-        // my plugin code
-    }
-})(jQuery);
 
 
 
